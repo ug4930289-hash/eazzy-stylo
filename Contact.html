@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EazZy StylO</title>
+    <style>
+        /* nav */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+        }
+
+
+
+        nav {
+            height: 70px;
+            width: 90%;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: transparent;
+            position: fixed;
+            top: 20px;
+            left: 5%;
+            right: 5%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 10;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* LOGO */
+
+        .nav-logo {
+            font-size: 27px;
+            color: #e9ca65;
+            cursor: context-menu;
+            letter-spacing: 1px;
+        }
+
+        .span-nav-logo {
+            color: white;
+        }
+
+        /* LINKS */
+
+        .a-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .a-div a {
+            position: relative;
+
+            font-size: 17px;
+            font-family: "Segoe UI", sans-serif;
+
+            /* color: #ffeccb; */
+            color: #fff;
+
+            font-weight: 500;
+
+            transition: all 0.3s ease;
+        }
+
+
+        /* UNDERLINE EFFECT */
+
+        .a-div a::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            left: 50%;
+            bottom: -7px;
+            background: #e0c388;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .a-div a:hover {
+            color: #F5E6C8;
+        }
+
+        .a-div a:hover::after {
+            width: 100%;
+        }
+
+
+        /* MENU */
+
+        .menu {
+            color: white;
+            padding-right: 15px;
+            font-size: 18px;
+            display: none;
+        }
+
+
+        @media (max-width: 992px) {
+
+            nav {
+                width: 92%;
+                padding: 0 25px;
+            }
+
+            .nav-logo {
+                font-size: 22px;
+            }
+
+            .a-div {
+                gap: 20px;
+            }
+
+            .a-div a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: block;
+                color: #fff;
+                z-index: 1001;
+            }
+
+            .a-div {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #0a0a0a;
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+                padding: 25px 0;
+                border-top: 1px solid #222;
+                border-radius: 0 0 12px 12px;
+                display: none;
+                z-index: 999;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .a-div.active {
+                display: flex;
+            }
+
+            .a-div a {
+                font-size: 17px;
+                color: #fff;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            /* NAVBAR */
+            nav {
+                width: 90%;
+                height: 60px;
+                top: 15px;
+                padding: 0 18px;
+                border-radius: 10px;
+            }
+
+            .nav-logo {
+                font-size: 20px;
+            }
+
+            .a-div {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+                font-size: 15px;
+                margin: 0;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+        }
+
+
+        /* ===== VERY SMALL MOBILE ===== */
+        @media (max-width: 380px) {
+
+            nav {
+                width: 92%;
+                padding: 0 14px;
+            }
+
+            .nav-logo {
+                font-size: 18px;
+            }
+
+            .menu {
+                font-size: 12px;
+            }
+        }
+
+        /* nav */
+        /* ========== LUXURY CONTACT PAGE ========== */
+        /* ========== BIGGER LUXURY CONTACT ========== */
+        .contact-page {
+            background: #0a0a0a;
+            padding: 150px 20px 100px;
+            color: #fff;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .contact-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .contact-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            color: #d4af37;
+            font-weight: 500;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .contact-header .divider {
+            width: 100px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0 auto 20px;
+        }
+
+        .contact-header p {
+            color: #999;
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        /* Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 50px;
+        }
+
+        /* Info Box */
+        .contact-info {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 18px;
+            padding: 50px 40px;
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #d4af37;
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            margin-bottom: 32px;
+        }
+
+        .info-item span {
+            display: block;
+            color: #d4af37;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .info-item p {
+            color: #ddd;
+            font-size: 17px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Form */
+        .contact-form {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 18px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background: #0a0a0a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #d4af37;
+        }
+
+        .contact-form textarea {
+            resize: none;
+        }
+
+        .contact-form button {
+            margin-top: 10px;
+            background: transparent;
+            border: 1.5px solid #d4af37;
+            color: #d4af37;
+            padding: 18px;
+            font-size: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .contact-form button:hover {
+            background: #d4af37;
+            color: #0a0a0a;
+        }
+
+        .form-message {
+            text-align: center;
+            font-size: 15px;
+            min-height: 22px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-header h1 {
+                font-size: 38px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 35px 25px;
+            }
+        }
+
+        /* footer */
+        /* footer */
+        .footer {
+            background: #080808;
+            border-top: 1px solid #1f1f1f;
+            padding-top: 80px;
+            color: #ccc;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px 60px;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
+            gap: 50px;
+        }
+
+        /* Brand */
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            color: #d4af37;
+            margin-bottom: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-logo span {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .footer-desc {
+            color: #888;
+            font-size: 14.5px;
+            line-height: 1.75;
+            max-width: 290px;
+        }
+
+        /* Headings */
+        .footer-col h4 {
+            color: #d4af37;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 22px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* Links */
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 11px;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14.5px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #d4af37;
+            padding-left: 4px;
+        }
+
+        /* Contact */
+        .footer-col.contact p {
+            color: #999;
+            font-size: 14.5px;
+            margin-bottom: 9px;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            margin-top: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Bottom Bar */
+        .footer-bottom {
+            border-top: 1px solid #1f1f1f;
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: #555;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .footer-bottom .made {
+            color: #444;
+            font-size: 12.5px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding-top: 60px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .footer-desc {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .social-links {
+                align-items: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+
+        /* footer */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1 class="nav-logo">EazZy <span class="span-nav-logo">StylO</span></h1>
+
+        <div class="a-div" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="FAQ.html">FAQ</a>
+        </div>
+
+        <p class="menu" id="menuBtn">menu</p>
+    </nav> <!-- nav -->
+
+    <!-- nav  -->
+    <!-- ========== CONTACT PAGE ========== -->
+    <section class="contact-page">
+        <div class="contact-container">
+
+            <div class="contact-header">
+                <h1>Get In Touch</h1>
+                <div class="divider"></div>
+                <p>We’d love to hear from you. Send us a message anytime.</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Left Side -->
+                <div class="contact-info">
+                    <h2>Contact Details</h2>
+
+                    <div class="info-item">
+                        <span>Email</span>
+                        <p>support@eazzystylo.com</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Phone</span>
+                        <p>+92 3362745736</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Location</span>
+                        <p>Karachi, Pakistan</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Working Hours</span>
+                        <p>Monday – Saturday<br>10:00 AM – 8:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Right Side Form -->
+                <form class="contact-form" id="contactForm">
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="message" rows="7" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                    <p class="form-message" id="formMessage"></p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Brand Column -->
+            <div class="footer-col brand">
+                <h2 class="footer-logo">EazZy <span>StylO</span></h2>
+                <p class="footer-desc">
+                    Elevate your wardrobe with premium men's fashion.
+                    Crafted for those who demand style, quality and confidence.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social -->
+            <div class="footer-col contact">
+                <h4>Get In Touch</h4>
+                <p>support@eazzystylo.com</p>
+                <p>+92 300 1234567</p>
+                <p>Karachi, Pakistan</p>
+
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>© 2026 EazZy StylO. All Rights Reserved.</p>
+            <p class="made">Designed with style in Pakistan</p>
+        </div>
+    </footer>
+
+
+    <!-- script- Java  -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            const formMessage = document.getElementById("formMessage");
+
+            // Validation
+            if (name.length < 3) {
+                formMessage.style.color = "#ff6b6b";
+                formMessage.textContent = "Please enter a valid name";
+                return;
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                formMessage.style.color = "#ff6b6b";
+                formMessage.textContent = "Please enter a valid email";
+                return;
+            }
+
+            if (message.length < 10) {
+                formMessage.style.color = "#ff6b6b";
+                formMessage.textContent = "Message is too short";
+                return;
+            }
+
+            // WhatsApp Number (yahan apna number likho)
+            const phoneNumber = "923362745736";   // Example: 92 + number (without 0)
+
+            // Message format
+            const whatsappMessage = `New Contact Form Message:%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+            // WhatsApp link
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+            // Open WhatsApp
+            window.open(whatsappURL, "_blank");
+
+            formMessage.style.color = "#4caf50";
+            formMessage.textContent = "Opening WhatsApp...";
+            this.reset();
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menuBtn");
+            const navLinks = document.getElementById("navLinks");
+
+            if (menuBtn && navLinks) {
+                // Menu open/close
+                menuBtn.addEventListener("click", function () {
+                    navLinks.classList.toggle("active");
+                });
+
+                // Link pe click hone pe menu band + page open
+                const links = navLinks.querySelectorAll("a");
+
+                links.forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        navLinks.classList.remove("active");
+                    });
+                });
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EazZy StylO</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+        }
+
+
+        nav {
+            height: 70px;
+            width: 90%;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: transparent;
+            position: fixed;
+            top: 20px;
+            left: 5%;
+            right: 5%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 10;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* LOGO */
+
+        .nav-logo {
+            font-size: 27px;
+            color: #e9ca65;
+            cursor: context-menu;
+            letter-spacing: 1px;
+        }
+
+        .span-nav-logo {
+            color: white;
+        }
+
+        /* LINKS */
+
+        .a-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .a-div a {
+            position: relative;
+
+            font-size: 17px;
+            font-family: "Segoe UI", sans-serif;
+
+            /* color: #ffeccb; */
+            color: #fff;
+
+            font-weight: 500;
+
+            transition: all 0.3s ease;
+        }
+
+
+        /* UNDERLINE EFFECT */
+
+        .a-div a::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            left: 50%;
+            bottom: -7px;
+            background: #e0c388;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .a-div a:hover {
+            color: #F5E6C8;
+        }
+
+        .a-div a:hover::after {
+            width: 100%;
+        }
+
+
+        /* MENU */
+
+        .menu {
+            color: white;
+            padding-right: 15px;
+            display: none;
+            color: #d4af37;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+
+        /* main container */
+
+        .main-container {
+            height: 640px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.466), rgba(0, 0, 0, 0.342)), url('img1.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-h1 {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            text-align: center;
+            /* color: #f7e3bd; */
+            color: #e9ca65;
+            font-size: 50px;
+            cursor: context-menu;
+            font-family: "Playfair Display", serif;
+            letter-spacing: 2px;
+            word-break: 2px;
+            z-index: 2;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .divider {
+            width: 230px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+            position: relative;
+            margin-right: 20px;
+            margin-top: 40px;
+        }
+
+        .divider::before {
+            content: "◆";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #d4af37;
+            font-size: 11px;
+            background-color: #0a0a0a;
+            /* background color ke hisaab se adjust kar lena */
+            padding: 0 10px;
+            line-height: 1;
+        }
+
+        .main-p {
+            position: absolute;
+            top: 58%;
+            padding-top: 30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            text-align: center;
+            color: #d0d0d0;
+            /* image jaisa soft light gray */
+            font-size: 17px;
+            /* image ke size ke qareeb */
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            z-index: 2;
+            letter-spacing: 0.4px;
+            cursor: context-menu;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        button {
+            background-color: transparent;
+            color: #fff;
+            height: 80px;
+            width: 270px;
+            font-size: 26px;
+            margin-top: 330px;
+            position: absolute;
+            border-radius: 20%;
+            transition: all 0.5s;
+            border: 2px solid rgb(240, 226, 104);
+        }
+
+        button a {
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: rgba(226, 212, 87, 0.274);
+            font-size: 27px;
+            letter-spacing: 1px;
+            border: none;
+        }
+
+
+        /* main container */
+        /* second-section */
+
+        .sec-section {
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #242424;
+
+        }
+
+        .h1 {
+            color: #fff;
+            font-family: cursive;
+            text-align: center;
+            font-size: 45px;
+            padding: 50px 20px 15px;
+            /* neeche wala padding kam kiya */
+        }
+
+        .h1 span {
+            color: #d4af37;
+            -webkit-text-stroke: 1px white;
+            font-family: cursive;
+            font-style: italic;
+            background-color: rgba(226, 212, 87, 0.411);
+            text-align: center;
+            padding: 10px 8px;
+            border-radius: 18px;
+
+        }
+
+        .section-subtitle {
+            color: #d0d0d0;
+            font-size: 17px;
+            text-align: center;
+            margin: 10px auto 40px;
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 5;
+        }
+
+
+        .cards-main {
+            border: none;
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            gap: 38px;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 70px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 470px;
+            width: 320px;
+            border-radius: 16px;
+            border: 1px solid rgba(245, 230, 200, 0.3);
+            padding: 0;
+            gap: 0;
+            background: #151515;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s ease;
+        }
+
+        .cards::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 30, 30, 0.28);
+            /* soft dark gray */
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .cards:hover::after {
+            opacity: 1;
+        }
+
+        .cards:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+        }
+
+
+        /* IMAGE */
+
+        .cards img {
+            height: 255px;
+            width: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            display: block;
+
+            border-radius: 0;
+
+            transition: 0.5s ease;
+        }
+
+        .cards:hover img {
+            transform: scale(1.04);
+        }
+
+
+        /* TITLE */
+
+        .cards h3 {
+            margin-top: 18px;
+
+            font-size: 21px;
+
+            font-family: "Playfair Display", serif;
+
+            color: #F5E6C8;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* DESCRIPTION */
+
+        .cards p {
+            margin-top: 8px;
+
+            padding: 0 18px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            font-family: "Segoe UI", sans-serif;
+
+            color: #cfc7bb;
+        }
+
+
+        /* PRICE */
+
+        .cards h4 {
+            margin-top: auto;
+            margin-bottom: 18px;
+
+            font-size: 21px;
+
+            font-family: "Segoe UI", sans-serif;
+
+            color: #F5E6C8;
+
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+        /* Menu button */
+
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .menu {
+                display: block;
+                color: #fff;
+            }
+
+            .a-div {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: #0a0a0a;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 30px 0;
+                border-top: 1px solid #222;
+                display: none;
+                /* pehle hidden */
+                z-index: 999;
+            }
+
+            .a-div.active {
+                display: flex;
+                /* click pe dikhe */
+            }
+
+            .a-div a {
+                font-size: 18px;
+            }
+        }
+
+        /* ===== TABLET ===== */
+        @media (max-width: 992px) {
+
+            nav {
+                width: 92%;
+                padding: 0 25px;
+            }
+
+            .nav-logo {
+                font-size: 22px;
+            }
+
+            .a-div {
+                gap: 20px;
+            }
+
+            .a-div a {
+                font-size: 14px;
+            }
+
+            .main-container {
+                height: 600px;
+            }
+
+            .main-h1 {
+                width: 80%;
+                font-size: 45px;
+                padding-bottom: 70px;
+            }
+
+            .main-p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .main-container button {
+                font-size: 24px;
+            }
+
+            .cards-main {
+                gap: 20px;
+                padding: 0 25px;
+            }
+
+            .cards {
+                width: 30%;
+            }
+
+            .cards img {
+                width: 100%;
+                height: 260px;
+                object-fit: cover;
+            }
+
+            .cards h3 {
+                font-size: 18px;
+            }
+
+            .cards p {
+                font-size: 14px;
+            }
+        }
+
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 576px) {
+
+            /* NAVBAR */
+            nav {
+                width: 90%;
+                height: 60px;
+                top: 15px;
+                padding: 0 18px;
+                border-radius: 10px;
+            }
+
+            .nav-logo {
+                font-size: 20px;
+            }
+
+            .a-div {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+                font-size: 15px;
+                margin: 0;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+
+            /* HERO */
+            .main-container {
+                width: 100%;
+                height: 670px;
+                padding: 0 20px;
+                text-align: center;
+            }
+
+            .main-h1 {
+                padding-top: 140px;
+                top: 190px;
+                width: 90%;
+                font-size: 38px;
+                line-height: 1.1;
+            }
+
+            .divider {
+                width: 200px;
+                height: 2px;
+                margin-bottom: 28px;
+                margin-left: 10px;
+            }
+
+            .main-p {
+                width: 90%;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .main-p br {
+                display: none;
+            }
+
+            .main-container button {
+                padding: 12px 25px;
+                font-size: 18px;
+            }
+
+
+            /* SECOND SECTION */
+            .sec-section {
+                padding: 40px 15px;
+            }
+
+            .sec-section>.h1 {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+
+            /* CARDS */
+            .cards-main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                padding: 0;
+            }
+
+            .cards {
+                width: 100%;
+                max-width: 380px;
+            }
+
+            .cards img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            .cards h3 {
+                font-size: 20px;
+            }
+
+            .cards p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .cards h4 {
+                font-size: 16px;
+            }
+        }
+
+
+        /* ===== VERY SMALL MOBILE ===== */
+        @media (max-width: 380px) {
+
+            nav {
+                width: 92%;
+                padding: 0 14px;
+            }
+
+            .nav-logo {
+                font-size: 18px;
+            }
+
+            .menu {
+                font-size: 12px;
+            }
+
+            .main-container {
+                height: 670px;
+            }
+
+            .main-h1 {
+                font-size: 32px;
+                top: 220px;
+            }
+
+            .main-p {
+                font-size: 13px;
+            }
+
+            .main-container button {
+                padding: 10px 20px;
+                font-size: 21px;
+                width: 220px;
+            }
+
+
+
+            .sec-section>.h1 {
+                font-size: 28px;
+            }
+
+            .cards {
+                max-width: 330px;
+            }
+
+            .cards img {
+                height: 260px;
+            }
+        }
+
+        /* second-section */
+
+        /* why choose us  */
+
+        /* ========== WHY CHOOSE US ========== */
+        .why-choose {
+            background: #0a0a0a;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #d4af37;
+            margin-bottom: 12px;
+            cursor: context-menu;
+            font-weight: 500;
+        }
+
+        .why-divider {
+            width: 80px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0 auto 18px;
+        }
+
+        .why-subtitle {
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .why-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 35px 22px;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .why-icon {
+            font-size: 28px;
+            color: #d4af37;
+            margin-bottom: 18px;
+        }
+
+        .why-card h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .why-card p {
+            color: #a0a0a0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .why-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .why-title {
+                font-size: 32px;
+            }
+
+            .why-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .why-card {
+                padding: 28px 20px;
+            }
+        }
+
+        /* why choose us  */
+
+        /* reviews section */
+
+        /* ========== CUSTOMER REVIEWS ========== */
+        .reviews {
+            background: #0d0d0d;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #d4af37;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .reviews-divider {
+            width: 80px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0 auto 18px;
+        }
+
+        .reviews-subtitle {
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-bottom: 55px;
+            font-weight: 300;
+        }
+
+        .reviews-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .review-card {
+            background: #161616;
+            border: 1px solid #2a2a2a;
+            border-radius: 14px;
+            padding: 32px 26px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
+        }
+
+        .stars {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: #d0d0d0;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+            overflow-wrap: break-word;
+
+        }
+
+        .reviewer-info h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .reviewer-info span {
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .reviews-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .reviews-title {
+                font-size: 32px;
+            }
+
+            .reviews-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                padding: 26px 22px;
+            }
+        }
+
+
+        /* reviews section */
+        /* footer */
+
+        /* ========== FOOTER ========== */
+        /* ========== PREMIUM FOOTER ========== */
+        .footer {
+            background: #080808;
+            border-top: 1px solid #1f1f1f;
+            padding-top: 80px;
+            color: #ccc;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px 60px;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
+            gap: 50px;
+        }
+
+        /* Brand */
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            color: #d4af37;
+            margin-bottom: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-logo span {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .footer-desc {
+            color: #888;
+            font-size: 14.5px;
+            line-height: 1.75;
+            max-width: 290px;
+        }
+
+        /* Headings */
+        .footer-col h4 {
+            color: #d4af37;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 22px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* Links */
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 11px;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14.5px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #d4af37;
+            padding-left: 4px;
+        }
+
+        /* Contact */
+        .footer-col.contact p {
+            color: #999;
+            font-size: 14.5px;
+            margin-bottom: 9px;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            margin-top: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Bottom Bar */
+        .footer-bottom {
+            border-top: 1px solid #1f1f1f;
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: #555;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .footer-bottom .made {
+            color: #444;
+            font-size: 12.5px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding-top: 60px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .footer-desc {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .social-links {
+                align-items: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+
+        /* footer */
+    </style>
+</head>
+
+
+<body>
+
+    <nav>
+        <h1 class="nav-logo">EazZy <span class="span-nav-logo">StylO</span></h1>
+
+        <div class="a-div" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="FAQ.html">FAQ</a>
+        </div>
+
+        <p class="menu" id="menuBtn">menu</p>
+    </nav>
+    <!-- main container  -->
+
+    <div class="main-container">
+        <h1 class="main-h1">Elevate Your Style Own Your Look</h1>
+        <div class="divider"></div>
+        <p class="main-p">Discover premium men's fashion crafted for the <br>modern man who believes confidence starts
+            with
+            great style.</p>
+
+        <button><a href="shop.html">Explore Shop</a></button>
+    </div>
+
+    <!-- second section -->
+
+    <div class="sec-section">
+
+
+        <h1 class="h1"><span class="span">EazZy </span>Theme</h1>
+
+        <p class="section-subtitle"> Discover our premium collection crafted for the modern man.</p>
+
+        
+        <!-- cards -->
+        <div class="cards-main">
+            <!-- card 1 -->
+            <div class="cards">
+                <img src="jacket.jpg" alt="Black Leather Jacket">
+                <h3>Premium Leather Jacket</h3>
+                <p>Classic black leather jacket for men. Perfect for winter and night outs.</p>
+                <h4>Rs. 12,999 PKR</h4>
+            </div>
+
+            <!-- card 2 -->
+            <div class="cards">
+                <img src="shose.jpg" alt="White Sneakers">
+                <h3>White Casual Sneakers</h3>
+                <p>Comfortable and stylish white sneakers for daily wear and gym.</p>
+                <h4>Rs. 5,499 PKR</h4>
+            </div>
+
+            <!-- card 3 -->
+            <div class="cards">
+                <img src="watch.png" alt="Men's Wrist Watch">
+                <h3>Luxury Metal Watch</h3>
+                <p>Elegant stainless steel wrist watch. Water resistant and premium look.</p>
+                <h4>Rs. 8,999 PKR</h4>
+            </div>
+        </div>
+
+
+        <!-- card -->
+
+
+    </div>
+    <!-- cards -->
+
+    </div>
+
+
+    <!-- why choose Us -->
+
+    <!-- ========== WHY CHOOSE US SECTION ========== -->
+    <section class="why-choose">
+        <div class="why-container">
+            <h2 class="why-title">Why Choose Us</h2>
+            <div class="why-divider"></div>
+            <p class="why-subtitle">We deliver premium quality with unmatched style and service</p>
+
+            <div class="why-cards">
+                <!-- Card 1 -->
+                <div class="why-card">
+                    <div class="why-icon">✦</div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest materials and craftsmanship in every product we offer.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="why-card">
+                    <div class="why-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable shipping so you get your style without the wait.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="why-card">
+                    <div class="why-icon">🔒</div>
+                    <h3>Secure Payment</h3>
+                    <p>100% safe and encrypted transactions for complete peace of mind.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="why-card">
+                    <div class="why-icon">★</div>
+                    <h3>24/7 Support</h3>
+                    <p>Our team is always ready to help you with anything you need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== CUSTOMER REVIEWS SECTION ========== -->
+    <section class="reviews">
+        <div class="reviews-container">
+            <h2 class="reviews-title">What Our Customers Say</h2>
+            <div class="reviews-divider"></div>
+            <p class="reviews-subtitle">Real experiences from people who trust EazZy StylO</p>
+
+            <div class="reviews-cards">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        "The leather jacket is pure quality. Fit is perfect and the material feels premium. Highly
+                        recommended!"
+                    </p>
+                    <div class="reviewer">
+                        <div class="reviewer-info">
+                            <h4>Ahmed Raza</h4>
+                            <span>Karachi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        "White sneakers are super comfortable and look classy. I wear them daily. Great purchase!"
+                    </p>
+                    <div class="reviewer">
+                        <div class="reviewer-info">
+                            <h4>Hassan Ali</h4>
+                            <span>Lahore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p class="review-text">
+                        "The watch looks expensive and elegant. Delivery was fast and packaging was premium."
+                    </p>
+                    <div class="reviewer">
+                        <div class="reviewer-info">
+                            <h4>Usman Khan</h4>
+                            <span>Islamabad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <!-- ========== FOOTER ========== -->
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Brand Column -->
+            <div class="footer-col brand">
+                <h2 class="footer-logo">EazZy <span>StylO</span></h2>
+                <p class="footer-desc">
+                    Elevate your wardrobe with premium men's fashion.
+                    Crafted for those who demand style, quality and confidence.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social -->
+            <div class="footer-col contact">
+                <h4>Get In Touch</h4>
+                <p>support@eazzystylo.com</p>
+                <p>+92 300 1234567</p>
+                <p>Karachi, Pakistan</p>
+
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>© 2026 EazZy StylO. All Rights Reserved.</p>
+            <p class="made">Designed with style in Pakistan</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menuBtn");
+            const navLinks = document.getElementById("navLinks");
+
+            if (menuBtn && navLinks) {
+                // Menu open/close
+                menuBtn.addEventListener("click", function () {
+                    navLinks.classList.toggle("active");
+                });
+
+                // Link pe click hone pe menu band + page open
+                const links = navLinks.querySelectorAll("a");
+
+                links.forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        navLinks.classList.remove("active");
+                    });
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

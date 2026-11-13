@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EazZy StylO</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #0a0a0a;
+        }
+
+        /* Main content ko grow karne do */
+        main,
+        .faq-page,
+        .contact-page,
+        .about-page,
+        .shop-products,
+        .about-container,
+        .contact-container {
+            flex: 1 0 auto;
+        }
+
+        /* Footer hamesha neeche */
+        .footer {
+            flex-shrink: 0;
+            margin-top: auto;
+            width: 100%;
+            background: #080808;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background: #0a0a0a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+        }
+
+
+
+        nav {
+            height: 70px;
+            width: 90%;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: transparent;
+            position: fixed;
+            top: 20px;
+            left: 5%;
+            right: 5%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 10;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* LOGO */
+
+        .nav-logo {
+            font-size: 27px;
+            color: #e9ca65;
+            cursor: context-menu;
+            letter-spacing: 1px;
+        }
+
+        .span-nav-logo {
+            color: white;
+        }
+
+        /* LINKS */
+
+        .a-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .a-div a {
+            position: relative;
+
+            font-size: 17px;
+            font-family: "Segoe UI", sans-serif;
+
+            /* color: #ffeccb; */
+            color: #fff;
+
+            font-weight: 500;
+
+            transition: all 0.3s ease;
+        }
+
+
+        /* UNDERLINE EFFECT */
+
+        .a-div a::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            left: 50%;
+            bottom: -7px;
+            background: #e0c388;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .a-div a:hover {
+            color: #F5E6C8;
+        }
+
+        .a-div a:hover::after {
+            width: 100%;
+        }
+
+
+        /* MENU */
+
+        .menu {
+            color: white;
+            padding-right: 15px;
+            font-size: 18px;
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+
+            nav {
+                width: 92%;
+                padding: 0 25px;
+            }
+
+            .nav-logo {
+                font-size: 22px;
+            }
+
+            .a-div {
+                gap: 20px;
+            }
+
+            .a-div a {
+                font-size: 14px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .menu {
+                display: block;
+                color: #fff;
+                z-index: 1001;
+            }
+
+            .a-div {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #0a0a0a;
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+                padding: 25px 0;
+                border-top: 1px solid #222;
+                border-radius: 0 0 12px 12px;
+                display: none;
+                z-index: 999;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .a-div.active {
+                display: flex;
+            }
+
+            .a-div a {
+                font-size: 17px;
+                color: #fff;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            /* NAVBAR */
+            nav {
+                width: 90%;
+                height: 60px;
+                top: 15px;
+                padding: 0 18px;
+                border-radius: 10px;
+            }
+
+            .nav-logo {
+                font-size: 20px;
+            }
+
+            .a-div {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+                font-size: 15px;
+                margin: 0;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+        }
+
+
+        /* ===== VERY SMALL MOBILE ===== */
+        @media (max-width: 380px) {
+
+            nav {
+                width: 92%;
+                padding: 0 14px;
+            }
+
+            .nav-logo {
+                font-size: 18px;
+            }
+
+            .menu {
+                font-size: 12px;
+            }
+        }
+
+        /* nav */
+
+        /* promise */
+        /* ========== LAST PAGE ========== */
+        .last-page {
+            background: #0a0a0a;
+            padding: 140px 20px 100px;
+            color: #fff;
+        }
+
+        .last-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0 auto 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 45px;
+        }
+
+        /* Promise */
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-bottom: 90px;
+        }
+
+        .promise-box {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 14px;
+            padding: 28px 22px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .promise-box:hover {
+            border-color: #d4af37;
+            transform: translateY(-6px);
+        }
+
+        .promise-box h3 {
+            color: #d4af37;
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .promise-box p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Different Section */
+        .different-section {
+            margin-bottom: 40px;
+        }
+
+        .different-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .different-content p {
+            color: #bbb;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        /* FAQ (same style as before) */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: #d4af37;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16.5px;
+            padding: 22px 24px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-icon {
+            color: #d4af37;
+            font-size: 22px;
+            transition: 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 24px 20px;
+        }
+
+        .faq-answer p {
+            color: #bbb;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .faq-answer strong {
+            color: #d4af37;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .promise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .promise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        /* promise */
+
+        /* ========== FAQ PAGE ========== */
+
+        /* ========== BETTER FAQ PAGE ========== */
+        .faq-page {
+            background: #0a0a0a;
+            padding: 150px 20px 100px;
+            color: #fff;
+            flex: 1;
+        }
+
+        .faq-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .faq-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .faq-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #d4af37;
+            font-weight: 500;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .faq-divider {
+            width: 100px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0 auto 20px;
+        }
+
+        .faq-header p {
+            color: #999;
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        /* FAQ Items */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .faq-item {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #333;
+        }
+
+        .faq-item.active {
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 26px 28px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #d4af37;
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            color: #d4af37;
+            transition: transform 0.3s ease;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 28px 26px;
+        }
+
+        .faq-answer p {
+            color: #bbb;
+            font-size: 15.5px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .faq-answer strong {
+            color: #d4af37;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .faq-header h1 {
+                font-size: 34px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+                padding: 20px 22px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 22px 20px;
+            }
+        }
+
+        /* FAQ */
+
+
+        /* footer */
+        .footer {
+            background: #080808;
+            border-top: 1px solid #1f1f1f;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding-top: 80px;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            /* content ki max width */
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
+            gap: 50px;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            border-top: 1px solid #1f1f1f;
+            padding: 22px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Brand */
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            color: #d4af37;
+            margin-bottom: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-logo span {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .footer-desc {
+            color: #888;
+            font-size: 14.5px;
+            line-height: 1.75;
+            max-width: 290px;
+        }
+
+        /* Headings */
+        .footer-col h4 {
+            color: #d4af37;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 22px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* Links */
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 11px;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14.5px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #d4af37;
+            padding-left: 4px;
+        }
+
+        /* Contact */
+        .footer-col.contact p {
+            color: #999;
+            font-size: 14.5px;
+            margin-bottom: 9px;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            margin-top: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Bottom Bar */
+        .footer-bottom {
+            border-top: 1px solid #1f1f1f;
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: #555;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .footer-bottom .made {
+            color: #444;
+            font-size: 12.5px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding-top: 60px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .footer-desc {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .social-links {
+                align-items: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav>
+        <h1 class="nav-logo">EazZy <span class="span-nav-logo">StylO</span></h1>
+
+        <div class="a-div" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="FAQ.html">FAQ</a>
+        </div>
+
+        <p class="menu" id="menuBtn">menu</p>
+    </nav>
+
+
+    <!-- ========== LAST PAGE ========== -->
+    <section class="last-page">
+        <div class="last-container">
+
+            <!-- Our Promise -->
+            <div class="promise-section">
+                <h2 class="section-title">Our Promise</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">What you can always expect from EazZy StylO</p>
+
+                <div class="promise-grid">
+                    <div class="promise-box">
+                        <h3>Premium Quality</h3>
+                        <p>Every product is carefully selected and checked so you only get the best.</p>
+                    </div>
+                    <div class="promise-box">
+                        <h3>Timeless Style</h3>
+                        <p>We focus on designs that look good today and still feel premium tomorrow.</p>
+                    </div>
+                    <div class="promise-box">
+                        <h3>Real Confidence</h3>
+                        <p>Our pieces are made to make you feel sharp, comfortable and confident.</p>
+                    </div>
+                    <div class="promise-box">
+                        <h3>No Compromise</h3>
+                        <p>We never cut corners on material, stitching or finishing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Makes Us Different -->
+            <div class="different-section">
+                <h2 class="section-title">What Makes Us Different</h2>
+                <div class="section-divider"></div>
+
+                <div class="different-content">
+                    <p>
+                        Most brands just sell clothes. We build a complete style experience.
+                        From the quality of the fabric to the way every piece fits and feels —
+                        everything is chosen with one goal in mind: to make you look and feel better.
+                    </p>
+                    <p>
+                        At EazZy StylO, we don’t chase every trend. We choose only those pieces
+                        that actually add value to your wardrobe and last longer than a single season.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-header" style="margin-top: 80px;">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+
+            <div class="faq-list">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long does delivery take?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Delivery usually takes <strong>3–5 working days</strong> in major cities and <strong>5–7
+                                working days</strong> in other areas. You will get a tracking number once shipped.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer Cash on Delivery?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer <strong>Cash on Delivery</strong> on all products across Pakistan.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your return policy?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can return any unused product within <strong>7 days</strong> of delivery in its original
+                            condition.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are the products premium quality?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. We only work with <strong>premium quality</strong> materials and finishing so every
+                            piece feels worth it.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I contact support?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can reach us on the Contact page, WhatsApp, or email us at
+                            <strong>support@eazzystylo.com</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-col brand">
+                <h2 class="footer-logo">EazZy <span>StylO</span></h2>
+                <p class="footer-desc">
+                    Elevate your wardrobe with premium men's fashion.
+                    Crafted for those who demand style, quality and confidence.
+                </p>
+            </div>
+
+            <!-- Explore -->
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-col contact">
+                <h4>Get In Touch</h4>
+                <p>support@eazzystylo.com</p>
+                <p>+92 300 1234567</p>
+                <p>Karachi, Pakistan</p>
+
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026 EazZy StylO. All Rights Reserved.</p>
+            <p class="made">Designed with style in Pakistan</p>
+        </div>
+    </footer>
+
+
+    <!-- Accordion JS -->
+    <script>
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach(item => {
+            const question = item.querySelector(".faq-question");
+
+            question.addEventListener("click", () => {
+                faqItems.forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove("active");
+                    }
+                });
+                item.classList.toggle("active");
+            });
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menuBtn");
+            const navLinks = document.getElementById("navLinks");
+
+            if (menuBtn && navLinks) {
+                // Menu open/close
+                menuBtn.addEventListener("click", function () {
+                    navLinks.classList.toggle("active");
+                });
+
+                // Link pe click hone pe menu band + page open
+                const links = navLinks.querySelectorAll("a");
+
+                links.forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        navLinks.classList.remove("active");
+                    });
+                });
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>
